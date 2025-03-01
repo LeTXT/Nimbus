@@ -1,0 +1,53 @@
+@import '../../styles/variables.scss';
+
+.containerAverageTemperature {
+    @include add-strokes-bg();
+    @include container-temperature();
+
+    .tempWeather {
+        @include align-justify-direction-flex(start, center, column);
+
+        .climateImg {
+            @include imgBackground(none, 113px, 113px);
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            transform: translateY(-10px);
+        }
+        
+    } 
+}
+  
+.minMaxContainer {
+    @include add-strokes-bg();
+    @include align-justify-direction-flex(center, center, column);
+    @include container-temperature();
+
+    margin: 0;
+    padding: 0;
+
+    h1 {
+        font-size: 0.75rem;
+        font-weight: 500;
+        
+        transform: translateY(7px);
+    }
+}
+
+.containerHumidityVisibilityWind {
+    @include add-strokes-bg();
+    @include align-justify-direction-flex(space-between, center, column);
+    gap: 7px;
+
+    width: 100%;
+    max-height: 152px;
+
+    padding: 16px;
+
+    div {
+    @include align-justify-direction-flex(space-between, center);
+
+    width: 100%;
+    }
+}

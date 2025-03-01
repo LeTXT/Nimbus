@@ -1,0 +1,44 @@
+@import '../../styles/variables';
+
+.containerDays {
+    @include align-justify-direction-flex(space-around, center);
+    width: 100%;
+    max-width: 367px;
+    min-height: 63px;
+
+    @include add-strokes-bg();
+
+    .day-date {
+        width: 30px;
+        height: 38px;
+
+        flex-direction: column;
+        @include align-justify-direction-flex(space-evenly, center, column);
+
+        p {
+            margin: 0;
+            padding: 0;
+
+        }
+        p:first-child {
+            font-size: 10px;
+
+            transform: translateY(2px);
+        }
+    }
+
+    .today {
+        background-color: $bg-color-today;
+        border-radius: 5px;
+
+        p {
+            color: $color-today-font;
+            font-size: 12px;
+        }
+        p:last-child {
+            font-weight: 600;
+            font-size: 16px;
+        }
+    }
+
+}

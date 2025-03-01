@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+$primary-color: #202020;
+$secundary-color: #EC6E4C;
+
+$bg-color: #ffffff;
+$strokes-color: #D6D6D6;
+
+$bg-color-today: #56A3A6;
+$color-today-font: #ffffff;
+
+$bg-color-btn-play: $bg-color-today;
+$bg-color-btn-pause: $secundary-color;
+
+h1, h2, h3, h4, p, a {
+    color: $primary-color;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+@mixin add-strokes-bg($border-color: $strokes-color, $bg-color: $bg-color) {
+    border: solid 1px;
+    border-radius: 5px;
+    border-color: $border-color;
+    background-color: $bg-color;
+    
+}
+
+@mixin align-justify-direction-flex($justify-content:center, $align-items:center, $direction: row) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $direction;
+}
+
+@mixin imgBackground($img, $width: 22px, $height: 22px) {
+    width: $width;
+    height: $height;
+    background-image: url($img);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin botton-style($bg-color: $bg-color-btn-play, $transition: 1s, $width: 31px, $height: 31px) {
+    width: $width;
+    height: $height;
+
+    background-color: $bg-color;
+
+    transform: translate(18px, 71px);
+
+    border-radius: $width;
+    border: none;
+
+    transition: $transition;
+}
+
+@mixin container-temperature() {
+    width: 100%;
+    min-width: 166px;
+    max-height: 158px;
+}
