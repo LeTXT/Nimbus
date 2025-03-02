@@ -1,4 +1,4 @@
-@import '../styles/variables';
+@use '../abstracts/' as *;
 
 * {
     box-sizing: border-box;
@@ -17,9 +17,13 @@ body {
     padding: 0;
     
     overflow-x: hidden;
+
+    div {
+        height: 100%;
+    }
 }
 .container {
-    @include align-justify-direction-flex(start, center, column);
+    @include align-justify-direction-flex(center, center, column);
     
     gap: 10px;
 
@@ -28,14 +32,24 @@ body {
     background-color: $bg-color;
 
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
     padding: 16px;
 
     font-family: "Outfit", serif;
 
-    .inline {
-        display: flex;
-        gap: 12px;
+    .flexWrap {
+        @include align-justify-direction-flex(center, start);
+        gap: 10px;
+        flex-wrap: wrap;
+
+        height: max-content;
+
+        .flex {
+            @include align-justify-direction-flex();
+            gap: 12px;
+
+            height: fit-content;
+        }
     }
 }

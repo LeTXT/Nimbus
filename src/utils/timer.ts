@@ -37,18 +37,30 @@ export const handleScroll = (element:HTMLInputElement, set:React.Dispatch<React.
 };
 
 export const handleInfiniteScroll = (element: HTMLInputElement) => {
-    if(element.scrollTop <= 15) {
-        const items: HTMLCollection = element.children
-        const lastItem = items[items.length -1]
+    // if(element.scrollTop <= 15) {
+    //     const items: HTMLCollection = element.children
+    //     const lastItem = items[items.length -1]
 
-        element.removeChild(lastItem)
-        element.insertBefore(lastItem, items[0])
+    //     element.removeChild(lastItem)
+    //     element.insertBefore(lastItem, items[0])
         
        
-        element.scrollTop = element.children[0].offsetHeight
+    //     element.scrollTop = element.children[0].offsetHeight
       
+    // }
+    
+
+    const itemHeight = (element.children[0] as HTMLElement).offsetHeight ;
+
+    if (element.scrollTop <= 0) {
+        const lastItem = element.lastElementChild ;
+        if (lastItem) {
+            element.insertBefore(lastItem, element.firstElementChild);
+            element.scrollTop = itemHeight;
+        }
     }
 
+    
     if(element.scrollTop >= element.scrollHeight - element.clientHeight - 15) {
         const items = element.children
         const firstItem = items[0]
@@ -56,8 +68,11 @@ export const handleInfiniteScroll = (element: HTMLInputElement) => {
         element.removeChild(firstItem)
         element.appendChild(firstItem)
        
-        element.scrollTop -= firstItem.offsetHeight - 94
-    }           
+        setTimeout(() => {
+            element.scrollTop -= itemHeight - 94
+        }, 1)
+        
+    }          
 }
 
 

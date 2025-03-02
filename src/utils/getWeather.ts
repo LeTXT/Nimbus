@@ -26,10 +26,10 @@ export const notTemp = (info: number) => info.toString().split(".")[0] + '°C'
 export const getWeather = (setClimate: React.Dispatch<React.SetStateAction<WeatherData | null>>
   
 ) => {
-  const currentPosition = (position: object) => {
+  const currentPosition = (position: GeolocationPosition) => {
     userLocation = {
-      lat: position?.coords?.latitude,
-      lon: position?.coords?.longitude
+      lat: position.coords.latitude,
+      lon: position.coords.longitude
     }
   
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${userLocation.lat}&lon=${userLocation.lon}&lang=pt_br&appid=${APIkey}&units=metric`
@@ -42,7 +42,7 @@ export const getWeather = (setClimate: React.Dispatch<React.SetStateAction<Weath
       .catch(error => console.error(error));
   }
   
-  const errorCurrentPosition = (erro: unknown) => {
+  const errorCurrentPosition = (erro: GeolocationPositionError) => {
     console.error(erro);
   
     userLocation = {

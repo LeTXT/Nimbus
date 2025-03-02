@@ -1,11 +1,11 @@
-@import '../../styles/variables';
+@use '../../abstracts/' as *;
 
 .containerClock {
     @include align-justify-direction-flex(center);
 
-    max-height: 139px;
+    max-height: 120px;
     width: 100%;
-    max-width: 343px;
+    max-width: 443px;
 
     font-family: "Orbitron", serif;
 
@@ -17,16 +17,14 @@
     box-sizing: border-box;
 
     .hours {
-        height: 112px;
-        width: auto;
+        @include align-justify-direction-flex(center);
     
         h1 {
-            font-size: clamp(4rem, 96px, 8rem);
+            font-size: clamp(6rem, 100%, 8rem);
             font-weight: 100;
     
-            margin: 0;
             text-align: center;
-            
+            width: auto;
         }
     }
     .second {

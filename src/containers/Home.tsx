@@ -11,11 +11,13 @@ function Home() {
         <div className="container">
             <Clock />
             <Days />
-            <div className="inline">
-                <AverageTemperature />
-                <MinMax />
-            </div>
-            <HumidityVisibilityWind />
+            <div className="flexWrap">
+                <div className="flex">
+                    <AverageTemperature />
+                    <MinMax />
+                </div>
+                <HumidityVisibilityWind />
+            </div> 
             <Timer />
         </div>
     )

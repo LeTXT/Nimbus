@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@use '../../abstracts/' as *;
 
 .timerContainer {
     @include align-justify-direction-flex();

@@ -1,19 +1,24 @@
-@import '../../styles/variables';
+@use '../../abstracts/' as *;
 
 .containerDays {
     @include align-justify-direction-flex(space-around, center);
-    width: 100%;
-    max-width: 367px;
-    min-height: 63px;
-
     @include add-strokes-bg();
 
+    width: 100%;
+    max-width: 343px;
+    min-height: 63px;
+    max-height: 65px;
+
+    padding: 0 13px;
+    margin: 0;
+
     .day-date {
+        @include align-justify-direction-flex(space-evenly, center, column);
+
         width: 30px;
         height: 38px;
 
         flex-direction: column;
-        @include align-justify-direction-flex(space-evenly, center, column);
 
         p {
             margin: 0;
