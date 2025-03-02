@@ -53,3 +53,9 @@ body {
         }
     }
 }
+
+@media (max-width: 728px) {
+    .container {
+        @include align-justify-direction-flex(start, center, column);
+    }
+}

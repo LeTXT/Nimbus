@@ -1,16 +1,16 @@
 {
-  "homepage": "https://github.com/LeTXT/Nimbus.git",
   "name": "clock-weather",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://github.com/LeTXT/Nimbus",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.0.0",
