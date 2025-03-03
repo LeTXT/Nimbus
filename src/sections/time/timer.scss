@@ -60,7 +60,7 @@
         @include botton-style($bg-color-btn-pause);
 
         .img {
-            @include imgBackground('../../../public/pause.svg', 18px, 18px);
+            @include imgBackground('../../../public/pause.svg');
         }  
     }
 }

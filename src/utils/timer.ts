@@ -1,5 +1,3 @@
-
-
 export const handleScroll = (element:HTMLInputElement, set:React.Dispatch<React.SetStateAction<number>>) => {
     
     const offset = 35;
@@ -36,19 +34,7 @@ export const handleScroll = (element:HTMLInputElement, set:React.Dispatch<React.
     set(selectedNumber)
 };
 
-export const handleInfiniteScroll = (element: HTMLInputElement) => {
-    // if(element.scrollTop <= 15) {
-    //     const items: HTMLCollection = element.children
-    //     const lastItem = items[items.length -1]
-
-    //     element.removeChild(lastItem)
-    //     element.insertBefore(lastItem, items[0])
-        
-       
-    //     element.scrollTop = element.children[0].offsetHeight
-      
-    // }
-    
+export const handleInfiniteScroll = (element: HTMLInputElement) => {   
 
     const itemHeight = (element.children[0] as HTMLElement).offsetHeight ;
 
