@@ -64,3 +64,15 @@
         }  
     }
 }
+
+.alarm {
+    animation: alarm 1s ease-in infinite reverse;
+    // animation-delay: 4s;
+
+    @keyframes alarm {
+        
+        to {
+            border-radius: 30px;
+        }
+    }
+}
