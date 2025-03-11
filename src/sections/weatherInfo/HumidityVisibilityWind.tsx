@@ -12,7 +12,7 @@ function HumidityVisibilityWind() {
     return (
         <div className='containerHumidityVisibilityWind'>
             <div>
-                <p>Humidade</p>
+                <p>Umidade</p>
                 <p>{climate?.main?.humidity ? climate?.main?.humidity + '%' : 'N/A'}</p>
             </div>
             <div>
